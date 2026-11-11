@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cetin Sari — Projets</title>
+<meta name="description" content="Apps, sites et jeux que je construis à côté : Subarashii Manga Café, O.S.I., Casier, Helin Kinem, Video Edit Studio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0f0f0d;--fg:#f2efe8;--mute:#8f8b82;--soft:#bdb9b0;--line:#2a2925;--accent:#d7ff3a;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--fg);font-family:Inter,system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;font-size:14px}
+  nav .links a{margin-left:22px;text-decoration:none;color:var(--mute)}
+  nav .links a:hover{color:var(--fg)}
+  .logo{font-weight:600}
+  header{padding:72px 0 88px;border-bottom:1px solid var(--line)}
+  .kicker{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--mute);margin-bottom:26px}
+  h1{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(52px,10vw,132px);line-height:.92;letter-spacing:-.02em}
+  h1 em{color:var(--accent)}
+  .intro{max-width:580px;margin-top:34px;font-size:18px;color:#cfcbc2}
+  .index{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}
+  .index a{border:1px solid var(--line);border-radius:99px;padding:7px 15px;font-size:13px;color:#cfcbc2;text-decoration:none}
+  .index a:hover{border-color:var(--fg);color:var(--fg)}
+
+  .project{padding:96px 0;border-bottom:1px solid var(--line)}
+  .head{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:end;margin-bottom:48px}
+  .num{font-size:13px;color:var(--accent);letter-spacing:.12em;margin-bottom:14px}
+  h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(42px,6vw,76px);line-height:.95}
+  .tagline{font-family:"Instrument Serif",serif;font-style:italic;font-size:22px;color:var(--soft);margin-top:10px}
+  .desc p{color:var(--soft);font-size:16px}
+  .desc ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+  .desc li{font-size:12px;border:1px solid var(--line);border-radius:4px;padding:3px 9px;color:var(--mute)}
+
+  .shots{display:grid;gap:20px}
+  .shots.phones{grid-template-columns:repeat(3,1fr);max-width:900px;margin:0 auto}
+  .shots.desks{grid-template-columns:1fr 1fr}
+  .shots.desks .shot:first-child{grid-column:1/-1}
+  .shots.mixed{grid-template-columns:2.3fr 1fr;align-items:start}
+  .shot{cursor:zoom-in;background:#1a1a17;border:1px solid var(--line);overflow:hidden;transition:transform .3s,border-color .3s}
+  .shot:hover{transform:translateY(-4px);border-color:#4a4943}
+  .phone{border-radius:28px;padding:8px;background:#1d1d1a}
+  .phone img{border-radius:21px}
+  .browser{border-radius:10px}
+  .browser::before{content:"";display:block;height:26px;border-bottom:1px solid var(--line);background:
+    radial-gradient(circle at 14px 13px,#3a3934 4px,transparent 5px),radial-gradient(circle at 30px 13px,#3a3934 4px,transparent 5px),radial-gradient(circle at 46px 13px,#3a3934 4px,transparent 5px)}
+  .note{margin-top:18px;font-size:13px;color:var(--mute);text-align:center}
+
+  .more{padding:96px 0}
+  .more h2{margin-bottom:36px}
+  .more-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px}
+  .more-grid div{border-top:1px solid var(--line);padding-top:20px}
+  .more-grid b{display:block;font-family:"Instrument Serif",serif;font-weight:400;font-size:28px;margin-bottom:8px}
+  .more-grid p{color:var(--soft);font-size:15px}
+
+  footer{padding:90px 0 60px;border-top:1px solid var(--line)}
+  footer h2{font-size:clamp(40px,7vw,88px);line-height:1}
+  footer h2 em{color:var(--accent)}
+  footer p{color:var(--mute);margin-top:20px;font-size:14px}
+
+  #lb{position:fixed;inset:0;background:rgba(8,8,7,.94);display:none;align-items:center;justify-content:center;padding:24px;z-index:50;cursor:zoom-out}
+  #lb.on{display:flex}
+  #lb img{max-width:100%;max-height:100%;border-radius:8px}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.shot{transition:none}}
+  @media(max-width:800px){
+    nav .links{display:none}
+    .head{grid-template-columns:1fr;gap:20px}
+    .shots.phones{grid-template-columns:repeat(3,72%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+    .shots.phones .shot{scroll-snap-align:start}
+    .shots.desks,.shots.mixed{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <div class="logo">Cetin Sari</div>
+    <div class="links"><a href="#suba">Suba</a><a href="#osi">O.S.I.</a><a href="#casier">Casier</a><a href="#helin">Helin Kinem</a><a href="#studio">Studio</a></div>
+  </nav>
+
+  <header>
+    <div class="kicker">Projets perso · Genève</div>
+    <h1>Des idées,<br><em>construites.</em></h1>
+    <p class="intro">Social media manager et créateur de contenu, je construis à côté des apps, des sites et des jeux. Voici ceux qui sont en ligne.</p>
+    <div class="index">
+      <a href="#suba">Subarashii Manga Café</a><a href="#osi">O.S.I. : Alerte Espions !</a><a href="#casier">Casier</a><a href="#helin">Helin Kinem</a><a href="#studio">Video Edit Studio</a>
+    </div>
+  </header>
+
+  <section class="project" id="suba">
+    <div class="head reveal">
+      <div><div class="num">01 · WEB APP</div><h2>Subarashii Manga Café</h2><div class="tagline">Le manga café dans la poche.</div></div>
+      <div class="desc">
+        <p>L'app du premier manga café de Suisse, à Genève. On y retrouve l'agenda des tournois et soirées, une boutique avec retrait au comptoir et le SubaPass : une saison de paliers et de récompenses, de l'XP et un Top 10 des membres. Le staff a aussi son interface caisse.</p>
+        <ul><li>PWA</li><li>Next.js</li><li>Supabase</li><li>Fidélité & gamification</li><li>DA planche de manga</li></ul>
+      </div>
+    </div>
+    <div class="shots phones reveal">
+      <div class="shot phone"><img src="img/suba-1.webp" alt="Accueil de l'app Subarashii Manga Café" loading="lazy"></div>
+      <div class="shot phone"><img src="img/suba-2.webp" alt="Profil membre et SubaPass" loading="lazy"></div>
+      <div class="shot phone"><img src="img/suba-3.webp" alt="Boutique de l'app" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="project" id="osi">
+    <div class="head reveal">
+      <div><div class="num">02 · JEU DE SOCIÉTÉ + SITE</div><h2>O.S.I. : Alerte Espions !</h2><div class="tagline">Ne faites confiance à personne.</div></div>
+      <div class="desc">
+        <p>Mon jeu de bluff et de déduction, de 8 à 24 joueurs. Il a déjà été testé par plus de 100 personnes. Le site a l'ambiance d'un écran de surveillance. On y trouve des cartes de rôles qui se retournent, les règles complètes, une simulation pixel art de la première nuit et une liste d'attente pour le lancement.</p>
+        <ul><li>Game design</li><li>Site vitrine</li><li>Pixel art</li><li>Liste d'attente</li></ul>
+      </div>
+    </div>
+    <div class="shots desks reveal">
+      <div class="shot browser"><img src="img/osi-1.webp" alt="Accueil du site O.S.I." loading="lazy"></div>
+      <div class="shot browser"><img src="img/osi-2.webp" alt="Les 14 rôles du jeu" loading="lazy"></div>
+      <div class="shot browser"><img src="img/osi-3.webp" alt="Simulation pixel art de la première nuit" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="project" id="casier">
+    <div class="head reveal">
+      <div><div class="num">03 · WEB APP</div><h2>Casier</h2><div class="tagline">Les vidéos qu'on sauvegarde… et qu'on regarde enfin.</div></div>
+      <div class="desc">
+        <p>On colle un lien TikTok ou Instagram et la vidéo se range toute seule dans le bon casier (recettes, sport, voyage, business…) d'après sa légende et ses hashtags. On corrige d'un tap, l'app apprend, et le bouton « Une vidéo au hasard » ressort enfin ce qu'on avait mis de côté.</p>
+        <ul><li>PWA iPhone & Android</li><li>Tri automatique</li><li>Données sur le téléphone</li></ul>
+      </div>
+    </div>
+    <div class="shots phones reveal">
+      <div class="shot phone"><img src="img/casier-1.webp" alt="Casier : vue d'ensemble" loading="lazy"></div>
+      <div class="shot phone"><img src="img/casier-2.webp" alt="Casier : filtre Recettes" loading="lazy"></div>
+      <div class="shot phone"><img src="img/casier-3.webp" alt="Casier : fiche d'une vidéo" loading="lazy"></div>
+    </div>
+    <p class="note">Captures réalisées avec des vidéos d'exemple.</p>
+  </section>
+
+  <section class="project" id="helin">
+    <div class="head reveal">
+      <div><div class="num">04 · MEDIA KIT</div><h2>Helin Kinem</h2><div class="tagline">Le media kit d'une créatrice que je manage.</div></div>
+      <div class="desc">
+        <p>Une page bilingue FR/EN envoyée aux marques. Elle présente l'univers de Helin, les chiffres du dernier mois sur Instagram et TikTok, son audience et un portfolio de reels. Le tout se met à jour depuis un seul fichier de configuration.</p>
+        <ul><li>Talent management</li><li>Media kit</li><li>Bilingue</li><li>Site statique</li></ul>
+      </div>
+    </div>
+    <div class="shots desks reveal">
+      <div class="shot browser"><img src="img/helin-1.webp" alt="Accueil du media kit Helin Kinem" loading="lazy"></div>
+      <div class="shot browser"><img src="img/helin-2.webp" alt="Statistiques du dernier mois" loading="lazy"></div>
+      <div class="shot browser"><img src="img/helin-3.webp" alt="Portfolio de reels" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="project" id="studio">
+    <div class="head reveal">
+      <div><div class="num">05 · OUTIL</div><h2>Video Edit Studio</h2><div class="tagline">Un premier montage en un clic.</div></div>
+      <div class="desc">
+        <p>On dépose une vidéo face caméra : l'app la transcrit mot à mot, coupe les blancs, ajoute les sous-titres et place des animations liées à ce qui est dit (chiffres, checklists, avant/après). On choisit ensuite son look et on corrige tout avant d'exporter en MP4. Tout tourne sur l'ordinateur, sans rien envoyer en ligne.</p>
+        <ul><li>Whisper dans le navigateur</li><li>Motion design</li><li>Sous-titres</li><li>Export MP4</li></ul>
+      </div>
+    </div>
+    <div class="shots mixed reveal">
+      <div class="shot browser"><img src="img/studio-1.webp" alt="Video Edit Studio sur ordinateur" loading="lazy"></div>
+      <div class="shot phone"><img src="img/studio-2.webp" alt="Video Edit Studio sur téléphone" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="more">
+    <h2>Et aussi</h2>
+    <div class="more-grid">
+      <div><b>Social Media OS</b><p>Un template Notion pour gérer ses réseaux de A à Z, mon premier produit numérique.</p></div>
+      <div><b>DA vidéo Helin</b><p>Un style de montage complet pour les reels de Helin : sous-titres façon magazine, titres manuscrits, collage photos.</p></div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <h2>Une idée à<br><em>construire ?</em></h2>
+    <p>Basé à Genève.</p>
+  </footer>
+</div>
+
+<div id="lb" aria-hidden="true"><img alt=""></div>
+<script>
+  const lb=document.getElementById('lb'),lbImg=lb.querySelector('img');
+  document.querySelectorAll('.shot img').forEach(img=>img.parentElement.addEventListener('click',()=>{lbImg.src=img.src;lbImg.alt=img.alt;lb.classList.add('on')}));
+  lb.addEventListener('click',()=>lb.classList.remove('on'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
