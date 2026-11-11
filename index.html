@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cetin Sari — Projets</title>
-<meta name="description" content="Apps, sites et jeux que je construis à côté : Subarashii Manga Café, O.S.I., Casier, Helin Kinem, Video Edit Studio.">
+<meta name="description" content="Apps, sites, jeux et vidéos que je construis à côté : Subarashii Manga Café, O.S.I., Casier, Helin Kinem, My Nindô, Tasky.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -46,6 +46,7 @@
   .shot:hover{transform:translateY(-4px);border-color:#4a4943}
   .phone{border-radius:28px;padding:8px;background:#1d1d1a}
   .phone img{border-radius:21px}
+  .film video{display:block;width:100%;aspect-ratio:9/16;border-radius:21px;background:#000}
   .browser{border-radius:10px}
   .browser::before{content:"";display:block;height:26px;border-bottom:1px solid var(--line);background:
     radial-gradient(circle at 14px 13px,#3a3934 4px,transparent 5px),radial-gradient(circle at 30px 13px,#3a3934 4px,transparent 5px),radial-gradient(circle at 46px 13px,#3a3934 4px,transparent 5px)}
@@ -83,15 +84,15 @@
 <div class="wrap">
   <nav>
     <div class="logo">Cetin Sari</div>
-    <div class="links"><a href="#suba">Suba</a><a href="#osi">O.S.I.</a><a href="#casier">Casier</a><a href="#helin">Helin Kinem</a><a href="#studio">Studio</a></div>
+    <div class="links"><a href="#suba">Suba</a><a href="#osi">O.S.I.</a><a href="#casier">Casier</a><a href="#helin">Helin Kinem</a><a href="#nindo">My Nindô</a><a href="#tasky">Tasky</a></div>
   </nav>
 
   <header>
     <div class="kicker">Projets perso · Genève</div>
     <h1>Des idées,<br><em>construites.</em></h1>
-    <p class="intro">Social media manager et créateur de contenu, je construis à côté des apps, des sites et des jeux. Voici ceux qui sont en ligne.</p>
+    <p class="intro">Social media manager et créateur de contenu, je construis à côté des apps, des sites, des jeux et des vidéos. En voici une sélection.</p>
     <div class="index">
-      <a href="#suba">Subarashii Manga Café</a><a href="#osi">O.S.I. : Alerte Espions !</a><a href="#casier">Casier</a><a href="#helin">Helin Kinem</a><a href="#studio">Video Edit Studio</a>
+      <a href="#suba">Subarashii Manga Café</a><a href="#osi">O.S.I. : Alerte Espions !</a><a href="#casier">Casier</a><a href="#film">La première nuit</a><a href="#helin">Helin Kinem</a><a href="#nindo">My Nindô</a><a href="#tasky">Tasky</a>
     </div>
   </header>
 
@@ -125,9 +126,24 @@
     </div>
   </section>
 
+  <section class="project" id="film">
+    <div class="head reveal">
+      <div><div class="num">03 · VIDÉO</div><h2>La première nuit</h2><div class="tagline">Les règles d'O.S.I. en moins d'une minute.</div></div>
+      <div class="desc">
+        <p>Un film vertical en pixel art pour le TikTok du jeu. Dans le QG de l'O.S.I., 16 agents et 4 espions passent leur première nuit. Le narrateur appelle les rôles un par un, dans l'ordre officiel, jusqu'au lever du jour. La voix off a été faite avec ElevenLabs.</p>
+        <ul><li>Pixel art</li><li>Format 9:16</li><li>Voix off IA</li><li>TikTok</li></ul>
+      </div>
+    </div>
+    <div class="shots phones reveal">
+      <div class="phone film"><video src="video/osi-premiere-nuit.mp4" poster="img/film-poster.webp" controls playsinline preload="none"></video></div>
+      <div class="shot phone"><img src="img/film-1.webp" alt="La nuit : l'Ingénieur est appelé" loading="lazy"></div>
+      <div class="shot phone"><img src="img/film-2.webp" alt="Le jour se lève" loading="lazy"></div>
+    </div>
+  </section>
+
   <section class="project" id="casier">
     <div class="head reveal">
-      <div><div class="num">03 · WEB APP</div><h2>Casier</h2><div class="tagline">Les vidéos qu'on sauvegarde… et qu'on regarde enfin.</div></div>
+      <div><div class="num">04 · WEB APP</div><h2>Casier</h2><div class="tagline">Les vidéos qu'on sauvegarde… et qu'on regarde enfin.</div></div>
       <div class="desc">
         <p>On colle un lien TikTok ou Instagram et la vidéo se range toute seule dans le bon casier (recettes, sport, voyage, business…) d'après sa légende et ses hashtags. On corrige d'un tap, l'app apprend, et le bouton « Une vidéo au hasard » ressort enfin ce qu'on avait mis de côté.</p>
         <ul><li>PWA iPhone & Android</li><li>Tri automatique</li><li>Données sur le téléphone</li></ul>
@@ -143,7 +159,7 @@
 
   <section class="project" id="helin">
     <div class="head reveal">
-      <div><div class="num">04 · MEDIA KIT</div><h2>Helin Kinem</h2><div class="tagline">Le media kit d'une créatrice que je manage.</div></div>
+      <div><div class="num">05 · MEDIA KIT</div><h2>Helin Kinem</h2><div class="tagline">Le media kit d'une créatrice que je manage.</div></div>
       <div class="desc">
         <p>Une page bilingue FR/EN envoyée aux marques. Elle présente l'univers de Helin, les chiffres du dernier mois sur Instagram et TikTok, son audience et un portfolio de reels. Le tout se met à jour depuis un seul fichier de configuration.</p>
         <ul><li>Talent management</li><li>Media kit</li><li>Bilingue</li><li>Site statique</li></ul>
@@ -156,17 +172,33 @@
     </div>
   </section>
 
-  <section class="project" id="studio">
+  <section class="project" id="nindo">
     <div class="head reveal">
-      <div><div class="num">05 · OUTIL</div><h2>Video Edit Studio</h2><div class="tagline">Un premier montage en un clic.</div></div>
+      <div><div class="num">06 · JEU WEB</div><h2>My Nindô</h2><div class="tagline">Chronique d'un ninja.</div></div>
       <div class="desc">
-        <p>On dépose une vidéo face caméra : l'app la transcrit mot à mot, coupe les blancs, ajoute les sous-titres et place des animations liées à ce qui est dit (chiffres, checklists, avant/après). On choisit ensuite son look et on corrige tout avant d'exporter en MP4. Tout tourne sur l'ordinateur, sans rien envoyer en ligne.</p>
-        <ul><li>Whisper dans le navigateur</li><li>Motion design</li><li>Sous-titres</li><li>Export MP4</li></ul>
+        <p>Un jeu narratif de carrière : on incarne un jeune ninja de l'enfance jusqu'à la fin de sa légende, qu'il devienne Kage, déserteur ou sage errant. On crée son personnage (village, clan, affinité, mentor), puis chaque choix fait évoluer ses statistiques et son destin. Une partie dure 5 à 10 minutes, dans un univers entièrement original.</p>
+        <ul><li>Jeu narratif</li><li>7 arcs</li><li>Univers original</li><li>JavaScript</li></ul>
       </div>
     </div>
-    <div class="shots mixed reveal">
-      <div class="shot browser"><img src="img/studio-1.webp" alt="Video Edit Studio sur ordinateur" loading="lazy"></div>
-      <div class="shot phone"><img src="img/studio-2.webp" alt="Video Edit Studio sur téléphone" loading="lazy"></div>
+    <div class="shots phones reveal">
+      <div class="shot phone"><img src="img/nindo-1.webp" alt="Accueil de My Nindô" loading="lazy"></div>
+      <div class="shot phone"><img src="img/nindo-2.webp" alt="Création de personnage : choix du village" loading="lazy"></div>
+      <div class="shot phone"><img src="img/nindo-3.webp" alt="Un événement et ses choix" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="project" id="tasky">
+    <div class="head reveal">
+      <div><div class="num">07 · WEB APP</div><h2>Tasky</h2><div class="tagline">Ta liste de tâches, mais vivante.</div></div>
+      <div class="desc">
+        <p>Une to-do list zen avec un petit compagnon qui grandit à chaque tâche accomplie. On le personnalise au départ (univers, silhouette, regard, accessoire), puis il gagne de l'XP, change de palier et réagit à notre rythme, sans pression.</p>
+        <ul><li>PWA</li><li>React</li><li>Gamification</li><li>Productivité</li></ul>
+      </div>
+    </div>
+    <div class="shots phones reveal">
+      <div class="shot phone"><img src="img/tasky-1.webp" alt="Personnalisation du compagnon" loading="lazy"></div>
+      <div class="shot phone"><img src="img/tasky-2.webp" alt="Les tâches du jour" loading="lazy"></div>
+      <div class="shot phone"><img src="img/tasky-3.webp" alt="Le compagnon Tasky" loading="lazy"></div>
     </div>
   </section>
 
